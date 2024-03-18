@@ -26,13 +26,26 @@ public class Login extends JFrame {
         String strUserName = username.getText();
         // 获取输入密码
         String strPassword = new String(password.getPassword());
-        // 如果用户民为admin并且密码为1234.输出登录成功，否则输出失败
-        // 这里我们使用[.equals方法]：他是用于比较两个对象是否相等的方法，如果过两个变量相等就登录成功，如果不相等就登录失败
-        if (strUserName.equals("admin") == strPassword.equals("123")) {
+        /*
+        * 如果用户民为admin并且密码为1234.输出登录成功，否则输出失败
+        * 这里我们使用[.equals方法]：他是用于比较两个对象是否相等的方法，如果过两个变量相等就登录成功，如果不相等就登录失败
+        * */
+        if (strUserName.equals("admin") && strPassword.equals("123")) {
             System.out.println("登录成功");
+            // 关闭窗口过后
+            // this.setVisible(false); 隐藏窗口
+            this.dispose(); // 释放窗口
+
         } else {
             System.out.println("登录失败");
         }
+    }
+    /**
+     * 按钮退出
+     * @param e
+     */
+    private void Quit(ActionEvent e) {
+        this.dispose();
     }
 
     private void initComponents() {
@@ -119,6 +132,7 @@ public class Login extends JFrame {
 
                 //---- cancelButton ----
                 cancelButton.setText("\u9000\u51fa");
+                cancelButton.addActionListener(e -> Quit(e));
                 buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
