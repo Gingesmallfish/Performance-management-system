@@ -19,7 +19,6 @@ public class Login extends JFrame {
 
     /**
      * 登录按钮处理
-     *
      * @param e
      */
     private void fcok(ActionEvent e) {
@@ -28,7 +27,8 @@ public class Login extends JFrame {
         // 获取输入密码
         String strPassword = new String(password.getPassword());
         // 如果用户民为admin并且密码为1234.输出登录成功，否则输出失败
-        if (strUserName.equals("admin") & strPassword.equals("123")) {
+        // 这里我们使用[.equals方法]：他是用于比较两个对象是否相等的方法，如果过两个变量相等就登录成功，如果不相等就登录失败
+        if (strUserName.equals("admin") == strPassword.equals("123")) {
             System.out.println("登录成功");
         } else {
             System.out.println("登录失败");
@@ -65,21 +65,20 @@ public class Login extends JFrame {
                 //---- label1 ----
                 label1.setText("\u7528\u6237\u540d:");
                 contentPanel.add(label1);
-                label1.setBounds(75, 40, 45, 20);
+                label1.setBounds(85, 40, 45, 20);
 
                 //---- username ----
                 username.setText("admin");
                 username.setColumns(10);
                 username.setFont(new Font("\u9ed1\u4f53", Font.PLAIN, 16));
                 username.setForeground(new Color(0x3366ff));
-                username.setBackground(Color.white);
                 contentPanel.add(username);
                 username.setBounds(155, 35, 170, username.getPreferredSize().height);
 
                 //---- label2 ----
                 label2.setText("\u5bc6\u7801");
                 contentPanel.add(label2);
-                label2.setBounds(75, 90, 40, 17);
+                label2.setBounds(90, 95, 40, 17);
 
                 //---- password ----
                 password.setFont(new Font("Arial Black", Font.PLAIN, 10));
