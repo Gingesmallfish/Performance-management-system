@@ -30,6 +30,8 @@ public class Login extends JFrame {
         // 如果用户民为admin并且密码为1234.输出登录成功，否则输出失败
         if (strUserName.equals("admin") & strPassword.equals("123")) {
             System.out.println("登录成功");
+        } else {
+            System.out.println("登录失败");
         }
     }
 
@@ -71,7 +73,6 @@ public class Login extends JFrame {
                 username.setFont(new Font("\u9ed1\u4f53", Font.PLAIN, 16));
                 username.setForeground(new Color(0x3366ff));
                 username.setBackground(Color.white);
-                username.setEditable(false);
                 contentPanel.add(username);
                 username.setBounds(155, 35, 170, username.getPreferredSize().height);
 
