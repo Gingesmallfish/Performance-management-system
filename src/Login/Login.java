@@ -1,12 +1,12 @@
 package Login;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 /*
  * Created by JFormDesigner on Mon Mar 18 14:40:55 CST 2024
  */
-
 
 
 /**
@@ -15,6 +15,22 @@ import javax.swing.border.*;
 public class Login extends JFrame {
     public Login() {
         initComponents();
+    }
+
+    /**
+     * 登录按钮处理
+     *
+     * @param e
+     */
+    private void fcok(ActionEvent e) {
+        // 获取输入用户名
+        String strUserName = username.getText();
+        // 获取输入密码
+        String strPassword = new String(password.getPassword());
+        // 如果用户民为admin并且密码为1234.输出登录成功，否则输出失败
+        if (strUserName.equals("admin") & strPassword.equals("123")) {
+            System.out.println("登录成功");
+        }
     }
 
     private void initComponents() {
@@ -48,6 +64,14 @@ public class Login extends JFrame {
                 label1.setText("\u7528\u6237\u540d:");
                 contentPanel.add(label1);
                 label1.setBounds(75, 40, 45, 20);
+
+                //---- username ----
+                username.setText("admin");
+                username.setColumns(10);
+                username.setFont(new Font("\u9ed1\u4f53", Font.PLAIN, 16));
+                username.setForeground(new Color(0x3366ff));
+                username.setBackground(Color.white);
+                username.setEditable(false);
                 contentPanel.add(username);
                 username.setBounds(155, 35, 170, username.getPreferredSize().height);
 
@@ -55,6 +79,10 @@ public class Login extends JFrame {
                 label2.setText("\u5bc6\u7801");
                 contentPanel.add(label2);
                 label2.setBounds(75, 90, 40, 17);
+
+                //---- password ----
+                password.setFont(new Font("Arial Black", Font.PLAIN, 10));
+                password.setText("123");
                 contentPanel.add(password);
                 password.setBounds(155, 85, 170, password.getPreferredSize().height);
 
@@ -83,13 +111,14 @@ public class Login extends JFrame {
                 ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
 
                 //---- okButton ----
-                okButton.setText("OK");
+                okButton.setText("\u767b\u5f55");
+                okButton.addActionListener(e -> fcok(e));
                 buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));
 
                 //---- cancelButton ----
-                cancelButton.setText("Cancel");
+                cancelButton.setText("\u9000\u51fa");
                 buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
