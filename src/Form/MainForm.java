@@ -27,7 +27,7 @@ public class MainForm extends JFrame {
         menu1 = new JMenu();
         miExit = new JMenuItem();
         menu2 = new JMenu();
-        menuItem6 = new JMenuItem();
+        Studen = new JMenuItem();
         menuItem3 = new JMenuItem();
         menuItem4 = new JMenuItem();
         menu3 = new JMenu();
@@ -60,9 +60,9 @@ public class MainForm extends JFrame {
             {
                 menu2.setText("\u7cfb\u7edf\u7ba1\u7406");
 
-                //---- menuItem6 ----
-                menuItem6.setText("\u5b66\u751f\u7ba1\u7406");
-                menu2.add(menuItem6);
+                //---- Studen ----
+                Studen.setText("\u5b66\u751f\u7ba1\u7406");
+                menu2.add(Studen);
 
                 //---- menuItem3 ----
                 menuItem3.setText("\u8bfe\u7a0b\u7ba1\u7406");
@@ -129,7 +129,7 @@ public class MainForm extends JFrame {
     private JMenu menu1;
     private JMenuItem miExit;
     private JMenu menu2;
-    private JMenuItem menuItem6;
+    private JMenuItem Studen;
     private JMenuItem menuItem3;
     private JMenuItem menuItem4;
     private JMenu menu3;

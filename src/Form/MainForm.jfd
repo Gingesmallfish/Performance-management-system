@@ -57,7 +57,7 @@ new FormModel {
 					name: "menu2"
 					"text": "系统管理"
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "menuItem6"
+						name: "Studen"
 						"text": "学生管理"
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
