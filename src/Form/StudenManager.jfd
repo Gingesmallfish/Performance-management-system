@@ -11,8 +11,9 @@ new FormModel {
 			} ) {
 				name: "panel1"
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button1"
+					name: "flushed"
 					"text": "刷新"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "flushed", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button2"

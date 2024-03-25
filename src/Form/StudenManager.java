@@ -5,6 +5,7 @@
 package Form;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.table.*;
 
@@ -16,10 +17,26 @@ public class StudenManager extends JFrame {
         initComponents();
     }
 
+    /**
+     * 刷新数据
+     * @param e
+     */
+    private void flushed(ActionEvent e) {
+        /*
+        *  获取数据
+        *  获取表格数据模型
+        * */
+        TableModel model = table1.getModel();
+        // 给第一行第二列设置值
+        model.setValueAt("张三", 0,1);
+        model.setValueAt("12323213",0,0);
+        model.setValueAt("男",0,2);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         panel1 = new JPanel();
-        button1 = new JButton();
+        flushed = new JButton();
         button2 = new JButton();
         button3 = new JButton();
         button4 = new JButton();
@@ -34,9 +51,10 @@ public class StudenManager extends JFrame {
         {
             panel1.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
 
-            //---- button1 ----
-            button1.setText("\u5237\u65b0");
-            panel1.add(button1);
+            //---- flushed ----
+            flushed.setText("\u5237\u65b0");
+            flushed.addActionListener(e -> flushed(e));
+            panel1.add(flushed);
 
             //---- button2 ----
             button2.setText("\u65b0\u589e");
@@ -91,7 +109,7 @@ public class StudenManager extends JFrame {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JPanel panel1;
-    private JButton button1;
+    private JButton flushed;
     private JButton button2;
     private JButton button3;
     private JButton button4;
