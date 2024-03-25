@@ -41,13 +41,26 @@ public class StudenManager extends JFrame {
 
     }
 
+    private void delete(ActionEvent e) {
+        // 获取选中的下标
+        int index = table1.getSelectedRow();
+        if (index>=0) {
+            // 从学生列表中删除对应元素
+            Data.students.remove(index);
+            // 刷新数据
+            flushed(null);
+        }
+
+
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         panel1 = new JPanel();
         flushed = new JButton();
         button2 = new JButton();
         button3 = new JButton();
-        button4 = new JButton();
+        delete = new JButton();
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
 
@@ -72,9 +85,10 @@ public class StudenManager extends JFrame {
             button3.setText("\u4fee\u6539");
             panel1.add(button3);
 
-            //---- button4 ----
-            button4.setText("\u5220\u9664");
-            panel1.add(button4);
+            //---- delete ----
+            delete.setText("\u5220\u9664");
+            delete.addActionListener(e -> delete(e));
+            panel1.add(delete);
         }
         contentPane.add(panel1, BorderLayout.SOUTH);
 
@@ -120,7 +134,7 @@ public class StudenManager extends JFrame {
     private JButton flushed;
     private JButton button2;
     private JButton button3;
-    private JButton button4;
+    private JButton delete;
     private JScrollPane scrollPane1;
     private JTable table1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on

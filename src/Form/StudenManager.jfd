@@ -24,8 +24,9 @@ new FormModel {
 					"text": "修改"
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button4"
+					name: "delete"
 					"text": "删除"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "delete", true ) )
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "South"
