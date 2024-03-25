@@ -97,7 +97,7 @@ public class Login extends JFrame {
                 password.setFont(new Font("Arial Black", Font.PLAIN, 10));
                 password.setText("123");
                 contentPanel.add(password);
-                password.setBounds(155, 85, 170, password.getPreferredSize().height);
+                password.setBounds(155, 88, 170, password.getPreferredSize().height);
 
                 {
                     // compute preferred size
