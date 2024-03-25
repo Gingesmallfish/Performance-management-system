@@ -15,22 +15,30 @@ import javax.swing.table.*;
 public class StudenManager extends JFrame {
     public StudenManager() {
         initComponents();
+        flushed(null);
     }
 
     /**
      * 刷新数据
+     *
      * @param e
      */
     private void flushed(ActionEvent e) {
         /*
-        *  获取数据
-        *  获取表格数据模型
-        * */
-        TableModel model = table1.getModel();
-        // 给第一行第二列设置值
-        model.setValueAt("张三", 0,1);
-        model.setValueAt("12323213",0,0);
-        model.setValueAt("男",0,2);
+         *  获取数据
+         *  获取表格数据模型
+         * */
+        DefaultTableModel model = (DefaultTableModel) table1.getModel();
+        model.setRowCount(Data.students.size());
+
+        for (int i = 0; i < Data.students.size(); i++) {
+            // 给第一行第二列设置值
+            model.setValueAt(Data.students.get(i).xm, i, 1);
+            model.setValueAt(Data.students.get(i).xh, i, 0);
+            model.setValueAt(Data.students.get(i).xb, i, 2);
+
+        }
+
     }
 
     private void initComponents() {
