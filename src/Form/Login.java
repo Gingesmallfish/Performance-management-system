@@ -31,10 +31,10 @@ public class Login extends JFrame {
         * 这里我们使用[.equals方法]：他是用于比较两个对象是否相等的方法，如果过两个变量相等就登录成功，如果不相等就登录失败
         * */
         if (strUserName.equals("admin") && strPassword.equals("123")) {
-            System.out.println("登录成功");
-            // 关闭窗口过后
-            // this.setVisible(false); 隐藏窗口
+            MainForm mainForm = new MainForm();
+            mainForm.setVisible(true);
             this.dispose(); // 释放窗口
+            System.out.println("登录成功");
 
         } else {
             System.out.println("登录失败");
