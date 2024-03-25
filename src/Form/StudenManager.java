@@ -6,6 +6,7 @@ package Form;
 
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.table.*;
 
 /**
  * @author Administrator
@@ -22,6 +23,8 @@ public class StudenManager extends JFrame {
         button2 = new JButton();
         button3 = new JButton();
         button4 = new JButton();
+        scrollPane1 = new JScrollPane();
+        table1 = new JTable();
 
         //======== this ========
         var contentPane = getContentPane();
@@ -48,6 +51,39 @@ public class StudenManager extends JFrame {
             panel1.add(button4);
         }
         contentPane.add(panel1, BorderLayout.SOUTH);
+
+        //======== scrollPane1 ========
+        {
+
+            //---- table1 ----
+            table1.setModel(new DefaultTableModel(
+                new Object[][] {
+                    {null, null, null},
+                    {null, null, null},
+                },
+                new String[] {
+                    "\u5b66\u53f7", "\u59d3\u540d", "\u6027\u522b"
+                }
+            ) {
+                Class<?>[] columnTypes = new Class<?>[] {
+                    String.class, String.class, String.class
+                };
+                @Override
+                public Class<?> getColumnClass(int columnIndex) {
+                    return columnTypes[columnIndex];
+                }
+            });
+            {
+                TableColumnModel cm = table1.getColumnModel();
+                cm.getColumn(2).setCellEditor(new DefaultCellEditor(
+                    new JComboBox(new DefaultComboBoxModel(new String[] {
+                        "\u7537",
+                        "\u5973"
+                    }))));
+            }
+            scrollPane1.setViewportView(table1);
+        }
+        contentPane.add(scrollPane1, BorderLayout.CENTER);
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
@@ -59,5 +95,7 @@ public class StudenManager extends JFrame {
     private JButton button2;
     private JButton button3;
     private JButton button4;
+    private JScrollPane scrollPane1;
+    private JTable table1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }
