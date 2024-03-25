@@ -21,6 +21,11 @@ public class MainForm extends JFrame {
         this.dispose();
     }
 
+    private void StudenActiaon(ActionEvent e) {
+       StudenManager studenManager = new StudenManager();
+       studenManager.setVisible(true);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         menuBar1 = new JMenuBar();
@@ -34,9 +39,6 @@ public class MainForm extends JFrame {
         menuItem5 = new JMenuItem();
         dialogPane = new JPanel();
         contentPanel = new JPanel();
-        buttonBar = new JPanel();
-        okButton = new JButton();
-        cancelButton = new JButton();
 
         //======== this ========
         var contentPane = getContentPane();
@@ -62,6 +64,7 @@ public class MainForm extends JFrame {
 
                 //---- Studen ----
                 Studen.setText("\u5b66\u751f\u7ba1\u7406");
+                Studen.addActionListener(e -> StudenActiaon(e));
                 menu2.add(Studen);
 
                 //---- menuItem3 ----
@@ -96,27 +99,6 @@ public class MainForm extends JFrame {
                 contentPanel.setLayout(new BorderLayout());
             }
             dialogPane.add(contentPanel, BorderLayout.CENTER);
-
-            //======== buttonBar ========
-            {
-                buttonBar.setBorder(new EmptyBorder(12, 0, 0, 0));
-                buttonBar.setLayout(new GridBagLayout());
-                ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 85, 80};
-                ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
-
-                //---- okButton ----
-                okButton.setText("OK");
-                buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 0, 5), 0, 0));
-
-                //---- cancelButton ----
-                cancelButton.setText("Cancel");
-                buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 0, 0), 0, 0));
-            }
-            dialogPane.add(buttonBar, BorderLayout.SOUTH);
         }
         contentPane.add(dialogPane, BorderLayout.CENTER);
         setSize(485, 400);
@@ -136,8 +118,5 @@ public class MainForm extends JFrame {
     private JMenuItem menuItem5;
     private JPanel dialogPane;
     private JPanel contentPanel;
-    private JPanel buttonBar;
-    private JButton okButton;
-    private JButton cancelButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }
