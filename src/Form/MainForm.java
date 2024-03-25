@@ -5,6 +5,7 @@
 package Form;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -16,13 +17,17 @@ public class MainForm extends JFrame {
         initComponents();
     }
 
+    private void miExit(ActionEvent e) {
+        this.dispose();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         menuBar1 = new JMenuBar();
         menu1 = new JMenu();
-        menuItem1 = new JMenuItem();
+        miExit = new JMenuItem();
         menu2 = new JMenu();
-        menuItem2 = new JMenuItem();
+        menuItem6 = new JMenuItem();
         menuItem3 = new JMenuItem();
         menuItem4 = new JMenuItem();
         menu3 = new JMenu();
@@ -44,9 +49,10 @@ public class MainForm extends JFrame {
             {
                 menu1.setText("\u6587\u4ef6");
 
-                //---- menuItem1 ----
-                menuItem1.setText("\u9000\u51fa");
-                menu1.add(menuItem1);
+                //---- miExit ----
+                miExit.setText("\u9000\u51fa");
+                miExit.addActionListener(e -> miExit(e));
+                menu1.add(miExit);
             }
             menuBar1.add(menu1);
 
@@ -54,9 +60,9 @@ public class MainForm extends JFrame {
             {
                 menu2.setText("\u7cfb\u7edf\u7ba1\u7406");
 
-                //---- menuItem2 ----
-                menuItem2.setText("\u5b66\u751f\u7ba1\u7406");
-                menu2.add(menuItem2);
+                //---- menuItem6 ----
+                menuItem6.setText("\u5b66\u751f\u7ba1\u7406");
+                menu2.add(menuItem6);
 
                 //---- menuItem3 ----
                 menuItem3.setText("\u8bfe\u7a0b\u7ba1\u7406");
@@ -121,9 +127,9 @@ public class MainForm extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JMenuBar menuBar1;
     private JMenu menu1;
-    private JMenuItem menuItem1;
+    private JMenuItem miExit;
     private JMenu menu2;
-    private JMenuItem menuItem2;
+    private JMenuItem menuItem6;
     private JMenuItem menuItem3;
     private JMenuItem menuItem4;
     private JMenu menu3;
