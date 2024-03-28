@@ -36,7 +36,6 @@ public class StudenManager extends JFrame {
             model.setValueAt(Data.students.get(i).xm, i, 1);
             model.setValueAt(Data.students.get(i).xh, i, 0);
             model.setValueAt(Data.students.get(i).xb, i, 2);
-
         }
 
     }
@@ -50,7 +49,11 @@ public class StudenManager extends JFrame {
             // 刷新数据
             flushed(null);
         }
+    }
 
+    private void RevaeL(ActionEvent e) {
+       AddStudentForm addStudentForm = new AddStudentForm(null);
+       addStudentForm.setVisible(true);
 
     }
 
@@ -79,6 +82,7 @@ public class StudenManager extends JFrame {
 
             //---- button2 ----
             button2.setText("\u65b0\u589e");
+            button2.addActionListener(e -> RevaeL(e));
             panel1.add(button2);
 
             //---- button3 ----
