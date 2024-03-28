@@ -54,7 +54,6 @@ public class StudenManager extends JFrame {
     private void RevaeL(ActionEvent e) {
        AddStudentForm addStudentForm = new AddStudentForm(null);
        addStudentForm.setVisible(true);
-
     }
 
     private void initComponents() {

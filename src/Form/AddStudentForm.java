@@ -29,7 +29,14 @@ public class AddStudentForm extends JDialog {
         student.xb = textxb.getSelectedItem().toString();
         Data.students.add(student);  // 将学生添加列表中
         this.dispose();
+    }
 
+    /**
+     *  如果不添加数据，我们就取消窗口
+     * @param e
+     */
+    private void cancel(ActionEvent e) {
+       this.dispose();
     }
 
     private void initComponents() {
@@ -114,6 +121,7 @@ public class AddStudentForm extends JDialog {
 
                 //---- cancelButton ----
                 cancelButton.setText("\u53d6\u6d88");
+                cancelButton.addActionListener(e -> cancel(e));
                 buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
